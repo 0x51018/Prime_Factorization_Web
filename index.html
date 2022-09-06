@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title> 소인수분해 계산기 </title>
+<link rel="stylesheet" href="primefact.css">
+</head>
+<body>
+<p id="problem">소인수분해 계산기</p>
+<p id="example">소인수분해 할 숫자를 입력하세요! (최대 15자리)</p>
+<input id="answer" type="text" autocomplete="off" maxlength="15">
+<p id="note"></p>
+<p id="result"></p>
+<p id="result2"></p>
+<script>
+    var input = document.getElementById("answer");
+    input.addEventListener("keyup", function(event) {
+        if(event.keyCode === 13) {
+            
+            var n = Number(document.getElementById("answer").value);
+            var plist = new Object();
+            var cnt = 0;
+            if(n <= 0 || !Number.isInteger(n)) {
+                document.getElementById("note").innerHTML = "자연수를 입력하세요";
+                return 0;
+            } else {
+                document.getElementById("note").innerHTML = "";
+                document.getElementById("result").innerHTML = "";
+                document.getElementById("result2").innerHTML = "";
+                n = Math.floor(n);
+            }
+            if(n == 1) {
+                document.getElementById("result").innerHTML = 1;
+                return 0;
+            }
+            var i = 2;
+            while(n % i == 0) {
+                cnt++;
+                n /= 2;
+            }
+            if(cnt != 0) {
+                plist[i] = cnt;
+            }
+            for(i = 3; i * i <= n; i += 2) {
+                cnt = 0;
+                while(n % i == 0) {
+                    cnt++;
+                    n /= i;
+                }
+                if(cnt != 0) {
+                    plist[i] = cnt;
+                }
+            }
+            if(n > 1) {
+                plist[n] = 1;
+            }
+            var keys = Object.keys(plist);
+            for(var i = 0; i < keys.length - 1; i++) {
+                var j = keys[i];
+                document.getElementById("result").innerHTML += j;
+                if(plist[j] > 1) {
+                    document.getElementById("result").innerHTML += "<sup>" + plist[j] + "</sup>";
+                }
+                document.getElementById("result").innerHTML += " × ";
+            }
+            var last = keys[keys.length - 1];
+            document.getElementById("result").innerHTML += last;
+            if(plist[last] > 1) {
+                document.getElementById("result").innerHTML += "<sup>" + plist[last] + "</sup>";
+            }
+            //
+            for(var i = 0; i < keys.length - 1; i++) {
+                var j = keys[i];
+                for(var k = 0; k < plist[j]; k++) {
+                    document.getElementById("result2").innerHTML += j + " x ";
+                }
+            }
+            for(var k = 0; k < plist[last] - 1; k++) {
+                document.getElementById("result2").innerHTML += last + " x ";
+            }
+            document.getElementById("result2").innerHTML += last;
+        }
+    });
+    </script>
+</body>
+</html>
