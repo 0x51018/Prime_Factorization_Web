@@ -5,19 +5,20 @@ body{
 p#problem{
     color:#FFFFFF;
     margin-top:5%;
-    font-size:200%;
+    font-size:240%;
     text-align:center;
     font-weight:700
 }
 
 p#example{
     color:#FFFFFF;
-    text-align:center
+    text-align:center;
+    font-size:120%
 }
 
 input#answer{
     width:30%;
-    height:20%;
+    height:30%;
     margin-left:35%;
     margin-right:35%;
     font-size:175%;
@@ -27,7 +28,7 @@ input#answer{
 p#result{
     color:#FFFFFF;
     text-align:center;
-    font-size:200%
+    font-size:250%
 }
 
 p#result2{
@@ -40,5 +41,5 @@ p#note{
     color:red;
     font-weight:400;
     text-align:center;
-    font-size:120%
+    font-size:130%
 }
