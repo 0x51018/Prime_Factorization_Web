@@ -57,24 +57,23 @@
     var input = document.getElementById("answer");
     input.addEventListener("keyup", function(event) {
         if(event.keyCode === 13) {
-            var n = document.getElementById("answer").value;
+            var nm = String(document.getElementById("answer").value);
             var plist = new Object();
             var cnt = 0;
-            if(n.length != 3) {
-                document.getElementById("note").innerHTML = "3글자의 이름을 입력해주세요.";
-                return 0;
-            } 
-            else {
-                document.getElementById("note").innerHTML = "";
+
+            if(nm.length != 3){
                 document.getElementById("result").innerHTML = "";
                 document.getElementById("result2").innerHTML = "";
-                n = 0;
-            }
-
-            if(n == 1) {
-                document.getElementById("result").innerHTML = 1;
+                document.getElementById("note").innerHTML = "3글자의 이름을 입력해주세요.";
                 return 0;
+            }else{
+                var n = (nm[0].charCodeAt(0)+1)*10000000000 + (nm[1].charCodeAt(0)+1)*100000 + nm[2].charCodeAt(0) +1
+                document.getElementById("note").innerHTML = "";
+                document.getElementById("note").innerHTML = n;
+                document.getElementById("result").innerHTML = "";
+                document.getElementById("result2").innerHTML = "";
             }
+            
             var i = 2;
             while(n % i == 0) {
                 cnt++;
