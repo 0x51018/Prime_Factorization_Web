@@ -2,6 +2,36 @@ body{
     background-color:#000000
 }
 
+#nav_menu ul {
+    color: #FFFFFF;
+    list-style-type: none;
+    padding-left: 0px;
+    float: left;
+}
+
+#nav_menu ul li {
+    color: #FFFFFF;
+    display: inline;
+    border-left: 1px solid #c0c0c0;
+    padding: 0px 20px 0px 5px;
+    margin: 4px 0px 4px 0px;
+}
+
+#nav_menu ul li:first-child {
+    color: #FFFFFF;
+    border-left: none;
+}
+
+#nav_menu a {
+    text-decoration: none;
+    color: #ffffff
+}
+
+#nav_menu a:hover {
+    color: lightgray;
+    border-bottom: 2px solid gray;
+}
+
 p#problem{
     color:#FFFFFF;
     margin-top:5%;
@@ -34,7 +64,7 @@ p#result{
 p#result2{
     color:#FFFFFF;
     text-align:center;
-    font-size:0%
+    font-size:180%
 }
 
 p#note{
