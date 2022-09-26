@@ -121,4 +121,8 @@ p#note{
         text-align:center;
         font-size:100%
     }    
+
+    #nav_menu ul {
+        text-size-adjust: 80%;
+    }
 }
