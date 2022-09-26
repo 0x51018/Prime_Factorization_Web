@@ -19,7 +19,7 @@ body{
     display: inline;
     border-left: 1px solid #c0c0c0;
     padding: 0px 10px 0px 10px;
-    margin: 5px 0px 5px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 #nav_menu ul li:first-child {
@@ -34,7 +34,7 @@ body{
 
 #nav_menu a:hover {
     color: lightgray;
-    border-bottom: 3px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 p#problem{
