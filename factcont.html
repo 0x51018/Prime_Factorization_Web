@@ -2,13 +2,14 @@
 <html>
 
 <head>
-    <meta name="viewport" http-equiv="content-type" content="width=device-width,initial-scale=1, user-scalable=no; charset=utf-8">
+    <meta name="viewport" http-equiv="content-type"
+        content="width=device-width,initial-scale=1, user-scalable=no; charset=utf-8">
     <title> 소인수분해 대회 </title>
     <link rel="stylesheet" href="primefact.css">
     <style>
         button {
             width: 6em;
-            margin:auto;
+            margin: auto;
             text-align: center;
             font-size: large;
             font-weight: 200%;
@@ -19,65 +20,65 @@
             padding: 5px;
         }
 
-        #btn{
+        #btn {
             text-align: center;
         }
 
-        #btn :hover{
+        #btn :hover {
             text-align: center;
             border: 2px solid white;
             color: #00FF00;
             background-color: black;
         }
 
-        p#note{
+        p#note {
             font-size: 120%;
             opacity: 0.8;
         }
 
-        @media ( max-width: 768px ) {
-            p#note{
+        @media (max-width: 768px) {
+            p#note {
                 font-size: 0%;
             }
         }
 
-        p#result{
+        p#result {
             background-color: #000000;
-            color:#FFFFFF;
-            text-align:center;
-            font-size:300%
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 300%
         }
 
-        p#result2{
-            color:#00FF00;
-            text-align:center;
-            font-size:210%
+        p#result2 {
+            color: #00FF00;
+            text-align: center;
+            font-size: 210%
         }
 
-        p#result3{
-            -webkit-user-select:none;
-            -moz-user-select:none;
-            -ms-user-select:none;
-            user-select:none
+        p#result3 {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
         }
     </style>
 </head>
 
 <script lang="Javascript">
-    function show(){alert('ehhe');}
+    function show() { alert('ehhe'); }
     function drawing() {
-         event.preventDefault();
-         document.getElementById("result").innerHTML = Math.floor(Math.random(1) * (9000)) + 1000;
+        event.preventDefault();
+        document.getElementById("result").innerHTML = Math.floor(Math.random(1) * (9000)) + 1000;
 
-         var hintarray = ["HINT! 일의 자리 숫자가 0,2,4,6,8인 수는 2의 배수입니다!", "HINT! 각 자리의 수의 합이 3의 배수라면 3의 배수입니다!", 
-         "HINT! 일의 자리 숫자가 0 또는 5라면 5의 배수입니다!", "HINT! 일의 자리 수의 2배를 나머지 자리의 수에서 뺀 결과가 7의 배수이면 7의 배수입니다!",
-        "HINT! 홀수 자리의 합과 짝수 자리의 합의 차가 11의 배수이면 11의 배수입니다!", "HINT! 일의 자리 수의 4배를 나머지 자리의 수에 더한 값이 13의 배수라면 13의 배수입니다!",
-        "HINT! 일의 자리 수의 5배를 나머지 자리의 수에서 뺀 값이 17의 배수이면 17의 배수입니다!", "HINT! 일의 자리 수의 2배를 나머지 자리의 수에 더한 값이 19의 배수라면 19의 배수입니다!",
-        "HINT! 일의 자리 수의 7배를 나머지 자리의 수에 더한 값이 23의 배수이면 23의 배수입니다!", "HINT! 일의 자리 수의 3배를 나머지 자리의 수에 더한 값이 29의 배수라면 29의 배수입니다!",
-        "HINT! 일의 자리 수의 3배를 나머지 자리의 수에서 뺀 값이 31의 배수이면 31의 배수입니다!", "HINT! 일의 자리부터 세 자리씩 나눠 묶은 수들을 더한 값이 37의 배수라면 37의 배수입니다!",
-        "HINT! 홀수라면 2의 배수가 아닙니다!"];
-         document.getElementById("note").innerHTML = hintarray[Math.floor(Math.random(1) * hintarray.length)];
-         document.getElementById("result2").innerHTML = "";
+        var hintarray = ["HINT! 일의 자리 숫자가 0,2,4,6,8인 수는 2의 배수입니다!", "HINT! 각 자리의 수의 합이 3의 배수라면 3의 배수입니다!",
+            "HINT! 일의 자리 숫자가 0 또는 5라면 5의 배수입니다!", "HINT! 일의 자리 수의 2배를 나머지 자리의 수에서 뺀 결과가 7의 배수이면 7의 배수입니다!",
+            "HINT! 홀수 자리의 합과 짝수 자리의 합의 차가 11의 배수이면 11의 배수입니다!", "HINT! 일의 자리 수의 4배를 나머지 자리의 수에 더한 값이 13의 배수라면 13의 배수입니다!",
+            "HINT! 일의 자리 수의 5배를 나머지 자리의 수에서 뺀 값이 17의 배수이면 17의 배수입니다!", "HINT! 일의 자리 수의 2배를 나머지 자리의 수에 더한 값이 19의 배수라면 19의 배수입니다!",
+            "HINT! 일의 자리 수의 7배를 나머지 자리의 수에 더한 값이 23의 배수이면 23의 배수입니다!", "HINT! 일의 자리 수의 3배를 나머지 자리의 수에 더한 값이 29의 배수라면 29의 배수입니다!",
+            "HINT! 일의 자리 수의 3배를 나머지 자리의 수에서 뺀 값이 31의 배수이면 31의 배수입니다!", "HINT! 일의 자리부터 세 자리씩 나눠 묶은 수들을 더한 값이 37의 배수라면 37의 배수입니다!",
+            "HINT! 홀수라면 2의 배수가 아닙니다!"];
+        document.getElementById("note").innerHTML = hintarray[Math.floor(Math.random(1) * hintarray.length)];
+        document.getElementById("result2").innerHTML = "";
     }
     function drawing2() {
         event.preventDefault();
@@ -86,7 +87,7 @@
         var plist = new Object();
         var cnt = 0;
 
-        if(n <= 0 || !Number.isInteger(n)) {
+        if (n <= 0 || !Number.isInteger(n)) {
             document.getElementById("note").innerHTML = n;
             return 0;
         } else {
@@ -94,63 +95,63 @@
             document.getElementById("result3").innerHTML = "";
             n = Math.floor(n);
         }
-        if(n == 1) {
+        if (n == 1) {
             document.getElementById("result2").innerHTML = 1;
             return 0;
-        
+
         }
         var i = 2;
-        while(n % i == 0) {
+        while (n % i == 0) {
             cnt++;
             n /= 2;
         }
-        if(cnt != 0) {
+        if (cnt != 0) {
             plist[i] = cnt;
         }
-        for(i = 3; i * i <= n; i += 2) {
+        for (i = 3; i * i <= n; i += 2) {
             cnt = 0;
-            while(n % i == 0) {
+            while (n % i == 0) {
                 cnt++;
-                 n /= i;
+                n /= i;
             }
-            if(cnt != 0) {
-                 plist[i] = cnt;
+            if (cnt != 0) {
+                plist[i] = cnt;
             }
         }
-        if(n > 1) {
+        if (n > 1) {
             plist[n] = 1;
         }
         var keys = Object.keys(plist);
-        for(var i = 0; i < keys.length - 1; i++) {
+        for (var i = 0; i < keys.length - 1; i++) {
             var j = keys[i];
             document.getElementById("result2").innerHTML += j;
-            if(plist[j] > 1) {
+            if (plist[j] > 1) {
                 document.getElementById("result2").innerHTML += "<sup>" + plist[j] + "</sup>";
             }
             document.getElementById("result2").innerHTML += " × ";
         }
         var last = keys[keys.length - 1];
         document.getElementById("result2").innerHTML += last;
-        if(plist[last] > 1) {
+        if (plist[last] > 1) {
             document.getElementById("result2").innerHTML += "<sup>" + plist[last] + "</sup>";
         }
-            //
-        for(var i = 0; i < keys.length - 1; i++) {
+        //
+        for (var i = 0; i < keys.length - 1; i++) {
             var j = keys[i];
-            for(var k = 0; k < plist[j]; k++) {
+            for (var k = 0; k < plist[j]; k++) {
                 document.getElementById("result3").innerHTML += j + " x ";
             }
         }
-        for(var k = 0; k < plist[last] - 1; k++) {
+        for (var k = 0; k < plist[last] - 1; k++) {
             document.getElementById("result3").innerHTML += last + " x ";
         }
         document.getElementById("result3").innerHTML += last;
 
-        if(document.getElementById("result").innerHTML === document.getElementById("result2").innerHTML) document.getElementById("result2").innerHTML = "야호 소수다!"
+        if (document.getElementById("result").innerHTML === document.getElementById("result2").innerHTML) document.getElementById("result2").innerHTML = "야호 소수다!"
 
-        
-     }
- </script>
+
+    }
+</script>
 
 <body>
     <div id="nav_menu">
@@ -158,26 +159,28 @@
             <li style="font-size: 140%;"><b><a href="sosu.html">소수교</a></b></li>
             <li><a href="index.html">소인수분해 계산기</a></li>
             <li><a href="factcont.html">소인수분해 대회</a></li>
+            <li><c href="name.html">이름 소인수분해</c></li>
         </ul>
     </div>
     <br><br><br>
     <hr width="100%">
 
-    
-
-<p id="problem">신나는 소인수분해 대회</p>
-<p id="example">임의의 4자리 수가 나타납니다. <br>소인수분해 한 결과를 빠르게 맞춰보세요!</p>
-<div id="btn">
-    <button id="randnum" value="수 뽑기" title="누르면 랜덤 숫자가 나타납니다." onclick="drawing()">수 뽑기</button>
-    <button id="showans" value="정답 보기" title="누르면 소인수분해한 결과인 정답을 볼 수 있습니다." onclick="drawing2()">정답 보기</button>
-</div>
 
 
-<p id="note"></p>
-<p id="result"></p>
-<p id="result2"></p>
-<p id="result3"></p>
-<p id="result4"></p>
+    <p id="problem">신나는 소인수분해 대회</p>
+    <p id="example">임의의 4자리 수가 나타납니다. <br>소인수분해 한 결과를 빠르게 맞춰보세요!</p>
+    <div id="btn">
+        <button id="randnum" value="수 뽑기" title="누르면 랜덤 숫자가 나타납니다." onclick="drawing()">수 뽑기</button>
+        <button id="showans" value="정답 보기" title="누르면 소인수분해한 결과인 정답을 볼 수 있습니다." onclick="drawing2()">정답 보기</button>
+    </div>
+
+
+    <p id="note"></p>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
 
 </body>
+
 </html>
