@@ -132,6 +132,6 @@ p#note{
 @media ( max-width: 552px ) {
     #nav_menu a {
         text-decoration: none;
-        font-size: 65%;
+        font-size: 75%;
     }
 }
