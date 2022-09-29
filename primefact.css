@@ -57,7 +57,9 @@ input#answer{
     margin-left:35%;
     margin-right:35%;
     font-size:175%;
-    text-align:center
+    text-align:center;
+    border-radius: 0;
+    transition: .3s;
 }
 
 p#result{
@@ -128,8 +130,8 @@ p#note{
 }
 
 @media ( max-width: 552px ) {
-    #nav_menu c {
+    #nav_menu a {
         text-decoration: none;
-        font-size: 0%;
+        font-size: 75%;
     }
 }
