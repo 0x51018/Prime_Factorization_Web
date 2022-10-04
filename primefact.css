@@ -81,7 +81,7 @@ p#note{
     font-size:130%
 }
 
-@media ( max-width: 768x ) {
+@media ( max-width: 768px ) {
     p#problem{
         color:#FFFFFF;
         margin-top:5%;
