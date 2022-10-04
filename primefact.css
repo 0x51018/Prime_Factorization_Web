@@ -123,11 +123,9 @@ p#note{
         text-align:center;
         font-size:100%
     }    
-    #nav_menu ul li {
-        color: #FF0000;
-        display: inline;
-        border-left: 1px solid #c0c0c0;
-        padding: 0px 10px 0px 10px;
-        margin: 0px 0px 0px 0px;
+    #nav_menu a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size:70%
     }
 }
