@@ -88,7 +88,7 @@
 <script lang="Javascript">
     function drawing() {
         event.preventDefault();
-        document.getElementById("result").innerHTML = Math.floor(Math.random(1) * (9000)) + 1000;
+        document.getElementById("result").innerHTML = Math.floor(Math.random(1) * (900)) + 100;
 
         var hintarray = ["HINT! 일의 자리 숫자가 0,2,4,6,8인 수는 2의 배수입니다!", "HINT! 각 자리의 수의 합이 3의 배수라면 3의 배수입니다!",
             "HINT! 일의 자리 숫자가 0 또는 5라면 5의 배수입니다!", "HINT! 일의 자리 수의 2배를 나머지 자리의 수에서 뺀 결과가 7의 배수이면 7의 배수입니다!",
@@ -182,7 +182,7 @@
 
 
     <p id="problem">신나는 소인수분해 대회</p>
-    <p id="example">임의의 4자리 수가 나타납니다. <br>소인수분해 한 결과를 빠르게 맞춰보세요!</p>
+    <p id="example">임의의 3자리 수가 나타납니다. <br>소인수분해 한 결과를 빠르게 맞춰보세요!</p>
     <div id="btn">
         <button id="randnum" value="수 뽑기" title="누르면 랜덤 숫자가 나타납니다." onclick="drawing()">수 뽑기</button>
         <button id="showans" value="정답 보기" title="누르면 소인수분해한 결과인 정답을 볼 수 있습니다." onclick="drawing2()">정답 보기</button>
