@@ -31,17 +31,25 @@
     }
     </script>
     <title>소인수분해 계산기</title>
-</head>
-
-<body>
     <style>
         p#result2 {
             color: #FFFFFF;
             text-align: center;
             font-size: 0%;
         }
+        #nav_menu {
+            position: fixed;
+            width: 100%;
+            background: #272727;
+            text-align: center;
+            z-index: 1000;
+            border-bottom: 2px solid #999; /* Solid line for visual separation */
+        }
     </style>
-    <div id="nav_menu">
+</head>
+
+<body>
+    <div id="nav_menu" style="left:0px;top:0px">
         <ul>
             <li style="font-size: 140%;"><b><a href="sosu.html">소수교</a></b></li>
             <li><a href="index.html">소인수분해 계산기</a></li>
@@ -50,7 +58,6 @@
         </ul>
     </div>
     <br><br><br>
-    <hr>
     <p id="problem">소인수분해 계산기</p>
     <p id="example">소인수분해 할 숫자를 입력하세요! (최대 15자리)</p>
     <input id="answer" type="text" autocomplete="off" maxlength="15">
