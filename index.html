@@ -37,25 +37,29 @@
             text-align: center;
             font-size: 0%;
         }
-        #nav_menu {
-            position: fixed;
-            width: 100%;
-            background: #272727;
-            text-align: center;
-            z-index: 1000;
-            border-bottom: 2px solid #999; /* Solid line for visual separation */
-        }
     </style>
 </head>
 
 <body>
-    <div id="nav_menu" style="left:0px;top:0px">
-        <ul>
-            <li style="font-size: 140%;"><b><a href="sosu.html">소수교</a></b></li>
-            <li><a href="index.html">소인수분해 계산기</a></li>
-            <li><a href="factcont.html">소인수분해 대회</a></li>
-            <li><a href="name.html">이름 소인수분해</a></li>
-        </ul>
+    <div id="nav_menu">
+        <div id="nav-item-left">
+            <b><a href="sosu.html" style="font-size: 120%; padding-left: 20px; padding-right: 20px;">소수교</a></b>
+        </div>
+        <div id="nav-item-mid">
+            <ul>
+                <li class="activate"><a href="index.html" >소인수분해 계산기</a><!----></li>
+                <li><a href="factcont.html">소인수분해 대회</a><!----></li>
+                <li><a href="name.html">이름 소인수분해</a><!----></li>
+            </ul>
+        </div>
+        <div id="nav-item-right" style="color: #FFFFFF;">
+            <p>MENU</p>
+            <button class="menu-button" type="button" style="padding-left: 20px; padding-right: 20px">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </div>
     <br><br><br>
     <p id="problem">소인수분해 계산기</p>

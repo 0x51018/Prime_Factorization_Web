@@ -1,5 +1,5 @@
 body{
-    background-color:#272727
+    background-color:#242424
 }
 
 ::selection {
@@ -7,35 +7,115 @@ body{
     color: #000;
  }
 
-#nav_menu ul {
-    color: #FFFFFF;
-    list-style-type: none;
-    padding-left: 0px;
-    float: left;
-}
-
-#nav_menu ul li {
-    color: #FFFFFF;
-    display: inline;
-    border-left: 1px solid #c0c0c0;
-    padding: 0px 10px 0px 10px;
-    margin: 0px 0px 0px 0px;
-}
-
-#nav_menu ul li:first-child {
-    color: #FFFFFF;
-    border-left: none;
+ #nav_menu {
+    position: fixed;
+    width: 100%;
+    background: #232323;
+    text-align: center;
+    z-index: 1000;
+    height: 70px;
+    border-bottom: 2px solid #555; /* Solid line for visual separation */
+    
+    left:0px;top:0px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: stretch;
 }
 
 #nav_menu a {
     text-decoration: none;
-    color: #ffffff
+    color: #ffffff;
 }
 
-#nav_menu a:hover {
-    color: #ff0;
-    border-bottom: 1px solid gray;
+#nav-item-left, #nav-item-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#nav-item-mid {
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 20;
+}
+
+#nav-item-mid ul {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-item-mid li {
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#nav-item-mid li::after{
+    border-top: 4px solid #e9c7c7;
+    content: "";
+    opacity: 0;
+    position: absolute;
+    width: 100%-40px;
+    left: 20px;
+    right: 20px;
+    top: 0;
+    transition: opacity .2s ease-in-out .1s;
+}
+
+#nav-item-mid li.activate::after {
+    opacity: 1;
+}
+
+#nav-item-mid a {
+    align-items: center;
+    display: inline-flex;
+    height: 100%;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0 20px;
+}
+
+
+.menu-button {
+    display: inline-flex; /* Allows for alignment of the spans */
+    flex-direction: column; /* Stacks the spans vertically */
+    justify-content: space-around; /* Evenly spaces the lines */
+    align-items: center; /* Centers the lines horizontally */
+    padding: 10px; /* Adds some space around the button content */
+    background-color: transparent; /* Makes the button background transparent */
+    border: none; /* Removes the button border */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    padding-left: 20px; /* Keeps your original padding-left style */
+}
+
+.menu-button span {
+    display: block; /* Ensures the span is treated as a block element, making width and height adjustments effective */
+    height: 3px; /* Sets the thickness of each line */
+    width: 25px; /* Adjusts the width of each line */
+    background-color: #fff; /* Sets the color of the lines */
+    margin-bottom: 5px; /* Adds space between each line */
+    border-width: 0;
+    opacity: 0.8;
+}
+
+.menu-button span:nth-child(2){
+    opacity: 0.8;
+}
+
+.menu-button span:last-child {
+    margin-bottom: 0; /* Removes the bottom margin from the last line to avoid extra spacing */
+}
+
 
 p#problem{
     color:#FFFFFF;
