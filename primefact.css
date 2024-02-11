@@ -79,6 +79,10 @@ body{
     transition: opacity .2s ease-in-out .1s;
 }
 
+#nav-item-mid li.upper:hover::after {
+    opacity: 0.5;
+}
+
 #nav-item-mid li.activate::after {
     opacity: 1;
 }
@@ -92,6 +96,42 @@ body{
     padding: 0 20px;
 }
 
+#nav-item-mid > ul > li > ul:before {
+    background-color: #111;
+    border-radius: 1px;
+    content: "";
+    height: 20px;
+    left: calc(50% - 10px);
+    position: absolute;
+    top: -10px;
+    transform: rotate(45deg);
+    width: 20px;
+}
+
+#nav-item-mid > ul > li > ul.dropdown-menu {
+    
+    display:none;
+    position: absolute;
+    height: 60%;
+    width:80%;
+    margin-left: 10%;
+    margin-top: 2px;
+    font-size: 90%;
+    padding: 0;
+}
+
+#nav-item-mid > ul > li:hover > ul.dropdown-menu {
+    display:block;
+}
+
+#nav-item-mid > ul > li:hover > ul > li {
+    background: #111;
+}
+
+#nav-item-mid > ul > li > ul > li:hover {
+    background: #333;
+    transition: ease .3s;
+}
 
 .menu-button {
     display: inline-flex; /* Allows for alignment of the spans */
@@ -166,53 +206,4 @@ p#note{
     font-weight:400;
     text-align:center;
     font-size:130%
-}
-
-@media ( max-width: 550px ) {
-    p#problem{
-        color:#FFFFFF;
-        margin-top:5%;
-        font-size:180%;
-        text-align:center;
-        font-weight:700
-    }
-    
-    p#example{
-        color:#FFFFFF;
-        text-align:center;
-        font-size:90%
-    }
-    
-    input#answer{
-        width:30%;
-        height:30%;
-        margin-left:35%;
-        margin-right:35%;
-        font-size:140%;
-        text-align:center
-    }
-    
-    p#result{
-        color:#FFFFFF;
-        text-align:center;
-        font-size:183%
-    }
-    
-    p#result2{
-        color:#FFFFFF;
-        text-align:center;
-        font-size:135%
-    }
-    
-    p#note{
-        font-size:100%
-    }
-    
-    #nav_menu a {
-        font-size:70%
-    }
-    
-    #nav_menu ul li {
-        padding: 0px 5px 0px 5px;
-    }
 }
