@@ -40,10 +40,10 @@
     </style>
 </head>
 
-<body>
+<body style="-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none">
     <div id="nav_menu">
         <div id="nav-item-left">
-            <b><a href="sosu.html" style="font-size: 120%; padding-left: 20px; padding-right: 20px;">소수교</a></b>
+            <b><a href="sosu.html" style="font-size: 140%; padding-left: 20px; padding-right: 20px;">소수교</a></b>
         </div>
         <div id="nav-item-mid">
             <ul>
@@ -66,7 +66,7 @@
     <p id="example">소인수분해 할 숫자를 입력하세요! (최대 15자리)</p>
     <input id="answer" type="text" autocomplete="off" maxlength="15">
     <p id="note"></p>
-    <p id="result"></p>
+    <p id="result" class="draggable"></p>
     <p id="result2"></p>
     <script>
         var input = document.getElementById("answer");
