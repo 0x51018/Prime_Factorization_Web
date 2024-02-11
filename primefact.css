@@ -61,7 +61,7 @@ body{
 }
 
 #nav-item-mid li::after{
-    border-top: 4px solid #e9c7c7;
+    border-top: 4px solid #fff;
     content: "";
     opacity: 0;
     position: absolute;
